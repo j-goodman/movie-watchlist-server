@@ -23,7 +23,7 @@ app.get("/movies/actor/:actorName", (req, res) => {
 })
 
 app.get("/movies/watched", (req, res) => {
-    
+    res.json(movies.filter(movie => movie.watched))
 })
 
 let counter = 20
