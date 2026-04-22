@@ -22,7 +22,7 @@ app.get("/movies/actor/:actorName", (req, res) => {
     res.json(movies.filter(movie => movie.starring.includes(req.params.actorName)))
 })
 
-app.get("/movies/watched", (req, res) => {
+app.get("/watchedMovies", (req, res) => {
     res.json(movies.filter(movie => movie.watched))
 })
 
