@@ -2,6 +2,18 @@ import express from 'express'
 import movies from './movies.js'
 
 const app = express()
+
+app.use((req, res, next) => {
+    res.set(`Access-Control-Allow-Origin`, `*`)
+
+    if (req.method === `OPTIONS`) {
+        res.set(`Access-Control-Allow-Methods`, `POST`, `PATCH`, `DELETE`)
+        return res.sendStatus(204)
+    }
+
+    next()
+})
+
 app.use(express.json())
 
 app.get("/", (req, res) => {
