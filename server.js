@@ -7,7 +7,7 @@ app.use((req, res, next) => {
     res.set(`Access-Control-Allow-Origin`, `*`)
 
     if (req.method === `OPTIONS`) {
-        res.set(`Access-Control-Allow-Methods`, `POST`, `PATCH`, `DELETE`)
+        res.set(`Access-Control-Allow-Methods`, `POST,PATCH,DELETE`)
         return res.sendStatus(204)
     }
 
